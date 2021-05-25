@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Project</title>
+    <link rel="stylesheet" href="projectLibrary.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-book-open"></i></div><div><h1>Library</h1></div>
+    </div>
+        <div class="button">
+            <div class="bookAdd">
+    <div class="add"><i class="fas fa-plus"></i></div>
+    <p class="text">Add a book</p>
+</div>
+</div>
+   <section class="bookContainer">
+    <section class="card">
+        <div class="content">
+
+        <div class="title div">The Kite Runner</div>
+
+        <div class="author div"><span>Author:</span>Khaled Hosseni</div>
+        <div class="pageNo div"><span>No of Pages:</span>300</div>
+        <div class="status div"><span>Status</span>Read</div>
+        <label class="switch">
+           <input type="checkbox"class="scrollBar">
+            <span class="slider round"></span>
+          </label>
+         <!-- <button class="remove"><i class="fas fa-trash"></i></button>-->
+<button class="remove">Remove</button>
+</div>
+
+
+       <!--<div class="state">Read/Unread:Read</div>--> 
+</section>
+
+    </section>
+    <div class="formContainer">
+<form>
+    <label for="title">Name of the book</label>
+    <input type="text"placeholder="title" required>
+
+    <label for="author">Author</label>
+    <input type="text"class="writer"placeholder="author" required>
+
+    <label for="pages">No of Page</label>
+    <input type="text"class="page"placeholder="No of pages">
+    
+    <label for="Read/Havn't Read">Read/Unread</label>
+    <input type="text"class="readStatus"placeholder="read/unread">
+    <button class="submit">SUBMIT</button>
+</form>
+</div>
+</div>
+<script src = "script.js"></script>
+</body>
+</html>

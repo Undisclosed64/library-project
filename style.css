@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chango&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,800&family=Roboto:ital,wght@0,300;1,400;1,500&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-attachment: scroll;
+  margin-bottom: 5em;
+  /*background: rgb(18, 14, 24);*/
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#423c5e+0,423c5e+100 */
+  /* background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );*/
+  /*background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);*
+  /* background: rgb(43, 4, 102);*/
+  /*
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );*/
+  /*background-image: linear-gradient(
+    to right top,
+    #ed068a,
+    #b72b90,
+    #813688,
+    #513673,
+    #2c2e55,
+    #27385b,
+    #26425f,
+    #2a4b61,
+    #30738d,
+    #339fb5,
+    #3fccd7,
+    #5ffbf1
+  );*/
+  background: linear-gradient(rgba(32, 0, 32, 1), rgba(0, 0, 0, 1));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.fa-book-open {
+  font-size: 3.5em;
+  color: #d00000;
+  float: left;
+  margin-top: 0.4em;
+  margin-right: 20px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+/*@media only screen and (min-width: 992px) {*/
+.container {
+  width: 100%;
+  /* padding: 3em;*/
+  padding: 3em;
+}
+.bookContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100vh;
+  margin: 2.5em;
+  margin-top: 1.1em;
+}
+.card {
+  border: 2px solid rgb(14, 163, 163);
+  font-size: 20px;
+  border-radius: 5px;
+  height: 75%;
+  background-color: rgb(245, 245, 244);
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #370617;
+  font-weight: 500;
+  padding: 1.1em;
+  margin-bottom: 1.5em;
+  width: 50vmin; /*vmin is minimum of width and height*/
+  /* margin-bottom: 1.5em;*/
+}
+form {
+  width: 40%;
+  height: 90%;
+}
+.fa-plus {
+  /* margin-left: 10vw;*/
+  margin: 0 auto;
+}
+input {
+  padding: 15px;
+  width: 20vw;
+  border-radius: 5px;
+  color: #111;
+  display: block;
+  margin: 10px auto;
+  border: none;
+}
+
+.submit {
+  background-color: rgb(230, 33, 33);
+  color: #fff;
+  margin: 30px auto;
+  height: 2em;
+  letter-spacing: 2px;
+}
+/*}*/
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: #d00000;
+  font-family: "Poppins", "sans-serif";
+  display: flex;
+  justify-content: flex-start;
+}
+.text {
+  position: relative;
+  bottom: 30px;
+  left: 0px;
+  visibility: hidden;
+  color: wheat;
+  font-size: 10px;
+  font-family: "Roboto";
+}
+
+.add:hover .text {
+  visibility: visible;
+}
+.button {
+  display: flex;
+  justify-content: center;
+}
+.add {
+  font-size: 8em;
+  color: rgb(218, 73, 6);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  margin-top: 0;
+  padding-top: 0;
+}
+.fa-plus:hover {
+  transform: scale(2, 2);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+button {
+  width: 15vw;
+  height: 5vw;
+  font-size: 18px;
+  padding: 8px;
+  background-color: rgba(23, 219, 170, 0.89);
+  border: none;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.bookContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100vh;
+  margin: 2.5em;
+  margin-top: 1.1em;
+}
+.card {
+  border: 2px solid rgb(14, 163, 163);
+  font-size: 20px;
+  border-radius: 5px;
+  height: 55%;
+  background-color: rgb(245, 245, 244);
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #370617;
+  font-weight: 500;
+  padding: 1.1em;
+  width: 50vmin; /*vmin is minimum of width and height*/
+  /* margin-bottom: 1.5em;*/
+}
+
+.div {
+  margin: 10px;
+}
+span {
+  font-weight: 300;
+  color: #111;
+  padding-right: 10px;
+}
+.title {
+  font-size: 25px;
+  font-family: "Raleway", sans-serif;
+  /* color: rgb(233, 27, 27);*/
+  color: rgb(238, 101, 38);
+  padding-bottom: 10px;
+}
+.switch {
+  /* width: 60px;
+  height: 34px;*/
+  width: 60px;
+  height: 24px;
+  position: relative;
+  /* left: 40px;
+  bottom: 40px;*/
+  /*  width: 60px;
+  height: 34px;*/
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  /* height: 26px;
+  width: 26px;*/
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.fa-trash {
+  position: relative;
+  left: 35vh;
+  bottom: 25px;
+}
+input:checked + .slider {
+  background-color: #f32160;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(35px);
+  transform: translateX(35px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+/*
+.slide.round::before {
+  border-radius: 50%;
+}
+*/
+form {
+  width: 40%;
+  height: 100%;
+  background-color: wheat;
+  position: absolute;
+  top: 20vw;
+  left: 30vw;
+  display: none;
+  padding: 20px;
+  opacity: 0.9;
+  background-attachment: scroll;
+}
+input {
+  padding: 15px;
+  width: 25vw;
+  border-radius: 5px;
+  color: #111;
+  display: block;
+  margin: 15px auto;
+  border: none;
+}
+label {
+  font-size: 20px;
+  color: #111;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.submit {
+  background-color: rgb(230, 33, 33);
+  color: #fff;
+  margin: 30px auto;
+}
+.fa-trash {
+  color: red;
+}
+.remove {
+  width: 10vw;
+  height: 7vh;
+  font-size: 15px;
+  margin: 10px auto;
+  background-color: rgb(238, 101, 38);
+  color: #fff;
+  letter-spacing: 2px;
+}
+/*}
+/*}
+/*
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: /*#370617*/ /* red;
+  }
+}
+
+@media only screen and (orientation: portrait) {}
+  /*440px and below*/
+
+/*for extra small devices*/
+
+@media (max-width: 575.98px) {
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: scroll;
+  }
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-left: 5%;
+    margin-top: 7%;
+  }
+  .fa-plus {
+    margin: 0 auto;
+    font-size: 0.7em;
+  }
+  .bookContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+  }
+
+  .card {
+    font-size: 16px;
+    height: 70%;
+    font-weight: 400;
+    width: 100vw; /*vmin is minimum of width and height*/
+    padding: 10px;
+    text-align: center;
+    margin: 20px;
+  }
+  .title {
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    /* color: rgb(233, 27, 27);*/
+    color: rgb(238, 101, 38);
+    margin-bottom: 15px;
+  }
+
+  span {
+    padding-right: 5px;
+  }
+  .div {
+    margin: 6px;
+  }
+  .remove {
+    width: 80vw;
+    height: 7vh;
+    font-size: 15px;
+    background-color: rgb(238, 101, 38);
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+
+  form {
+    width: 80%;
+    height: 90%;
+    object-fit: contain;
+    background-color: wheat;
+    position: absolute;
+    top: 50vw;
+    left: 10vw;
+    display: none;
+    padding: 10px;
+    opacity: 0.9;
+    background-attachment: scroll;
+  }
+  input {
+    padding: 5px;
+    width: 55vw;
+    border-radius: 5px;
+    color: #111;
+    display: block;
+    margin: 10px auto;
+    border: none;
+  }
+  label {
+    font-size: 18px;
+  }
+  .submit {
+    background-color: rgb(230, 33, 33);
+    color: #fff;
+    margin: 20px auto;
+    width: 50%;
+    height: 10%;
+    font-size: 13px;
+  }
+}
+
+/*@media only screen and (min-width: 577px) {
+  h1 {
+    margin-left: 0.5em;
+  }
+  .card {
+    min-height: 85%;
+    background-color: rgb(245, 245, 244);
+    border: none;
+    font-family: "Roboto", sans-serif;
+    color: #370617;
+    font-weight: 500;
+    padding: 1.2em;
+    width: 70vmin;
+    margin: auto;
+    margin: 15px auto;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+  .content {
+    text-align: center;
+  }
+  .switch {
+    margin-top: 1.5em;
+  }
+  .remove {
+    width: 10em;
+    height: 3em;
+    padding: 15px;
+  }
+
+  form {
+    width: 60%;
+    position: absolute;
+    top: 60vw;
+    left: 20vw;
+    padding: 5px;
+    height: 100vh;
+  }
+  input {
+    padding: 8px;
+    width: 30vw;
+    margin: 10px auto;
+  }
+  .submit {
+    margin: 30px auto;
+    padding: 10px;
+    width: 7em;
+    height: 2.5em;
+    letter-spacing: 3px;
+  }
+  .fa-plus {
+    margin-top: 10vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+/*@media only screen and (min-width: 768px) {
+  .fa-plus {
+    margin-bottom: 5vw;
+    margin-top: 4vw;
+  }
+  h1 {
+    margin-left: 1.1em;
+  }
+  .container {
+    padding: 5px;
+  }
+  .bookContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .card {
+    height: 80%;
+    width: 70vmin;
+    margin: 5px;
+    margin-bottom: 35px;
+  }
+  form {
+    position: absolute;
+    top: 15vw;
+    left: 20vw;
+    display: none;
+    padding: 10px;
+    opacity: 0.9;
+    background-attachment: scroll;
+    margin: 0 auto;
+  }
+  .submit {
+    height: 2.1em;
+  }
+
