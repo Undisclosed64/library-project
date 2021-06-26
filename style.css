@@ -1,240 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chango&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chango&family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,800&family=Roboto:ital,wght@0,300;1,400;1,500&display=swap");
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body {
-  background-attachment: scroll;
-  margin-bottom: 5em;
-  /*background: rgb(18, 14, 24);*/
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#423c5e+0,423c5e+100 */
-  /* background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );*/
-  /*background-color: #d9afd9;
-  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);*
-  /* background: rgb(43, 4, 102);*/
-  /*
-  background-image: linear-gradient(
-    to right top,
-    #d16ba5,
-    #c777b9,
-    #ba83ca,
-    #aa8fd8,
-    #9a9ae1,
-    #8aa7ec,
-    #79b3f4,
-    #69bff8,
-    #52cffe,
-    #41dfff,
-    #46eefa,
-    #5ffbf1
-  );*/
-  /*background-image: linear-gradient(
-    to right top,
-    #ed068a,
-    #b72b90,
-    #813688,
-    #513673,
-    #2c2e55,
-    #27385b,
-    #26425f,
-    #2a4b61,
-    #30738d,
-    #339fb5,
-    #3fccd7,
-    #5ffbf1
-  );*/
+.home {
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/4256852/pexels-photo-4256852.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fa-book-open {
+  color: #d00000;
+  float: left;
+}
+h1 {
+  color: #d00000;
+  font-family: "Poppins", "sans-serif";
+}
+.brandLine,
+.btn-add {
+  color: rgb(177, 161, 135);
+}
+.btn-add {
+  font-family: "Roboto", "sans-serif";
+  border: 2px solid blanchedalmond;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.bookAdd {
+  /* font-size: 5rem;*/
+  /* color: #023047;
+  color: #d00000;*/
+  text-align: center;
+}
+.fa-plus-circle {
+  color: mintcream;
+}
+.yourBooks {
+  /* background-color: #e5e5e5;*/
+  /*  #d8e2dc;*/
   background: linear-gradient(rgba(32, 0, 32, 1), rgba(0, 0, 0, 1));
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.fa-book-open {
-  font-size: 3.5em;
-  color: #d00000;
-  float: left;
-  margin-top: 0.4em;
-  margin-right: 20px;
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-/*@media only screen and (min-width: 992px) {*/
-.container {
-  width: 100%;
-  /* padding: 3em;*/
-  padding: 3em;
-}
-.bookContainer {
+.card,
+.demoCard {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: 100vh;
-  margin: 2.5em;
-  margin-top: 1.1em;
-}
-.card {
-  border: 2px solid rgb(14, 163, 163);
-  font-size: 20px;
-  border-radius: 5px;
-  height: 75%;
-  background-color: rgb(245, 245, 244);
-  border: none;
-  font-family: "Roboto", sans-serif;
-  color: #370617;
-  font-weight: 500;
-  padding: 1.1em;
-  margin-bottom: 1.5em;
-  width: 50vmin; /*vmin is minimum of width and height*/
-  /* margin-bottom: 1.5em;*/
-}
-form {
-  width: 40%;
-  height: 90%;
-}
-.fa-plus {
-  /* margin-left: 10vw;*/
-  margin: 0 auto;
-}
-input {
-  padding: 15px;
-  width: 20vw;
-  border-radius: 5px;
-  color: #111;
-  display: block;
-  margin: 10px auto;
-  border: none;
-}
-
-.submit {
-  background-color: rgb(230, 33, 33);
-  color: #fff;
-  margin: 30px auto;
-  height: 2em;
-  letter-spacing: 2px;
-}
-/*}*/
-
-h1 {
-  font-size: 4rem;
-  letter-spacing: 2px;
-  color: #d00000;
-  font-family: "Poppins", "sans-serif";
-  display: flex;
-  justify-content: flex-start;
-}
-.text {
-  position: relative;
-  bottom: 30px;
-  left: 0px;
-  visibility: hidden;
-  color: wheat;
-  font-size: 10px;
-  font-family: "Roboto";
-}
-
-.add:hover .text {
-  visibility: visible;
-}
-.button {
-  display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-.add {
-  font-size: 8em;
-  color: rgb(218, 73, 6);
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-  margin-top: 0;
-  padding-top: 0;
-}
-.fa-plus:hover {
-  transform: scale(2, 2);
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-}
-
-button {
-  width: 15vw;
-  height: 5vw;
-  font-size: 18px;
-  padding: 8px;
-  background-color: rgba(23, 219, 170, 0.89);
-  border: none;
-  border-radius: 5px;
-  display: block;
-  margin-bottom: 30px;
-}
-
-.bookContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: 100vh;
-  margin: 2.5em;
-  margin-top: 1.1em;
-}
-.card {
-  border: 2px solid rgb(14, 163, 163);
-  font-size: 20px;
-  border-radius: 5px;
-  height: 55%;
+  align-items: center;
+  font-family: "Source Sans Pro", sans-serif;
+  border-radius: 10px;
   background-color: rgb(245, 245, 244);
-  border: none;
-  font-family: "Roboto", sans-serif;
-  color: #370617;
-  font-weight: 500;
-  padding: 1.1em;
-  width: 50vmin; /*vmin is minimum of width and height*/
-  /* margin-bottom: 1.5em;*/
-}
 
-.div {
-  margin: 10px;
-}
-span {
-  font-weight: 300;
-  color: #111;
-  padding-right: 10px;
+  /*background-color: rgb(245, 245, 244);*/
+
+  /*background: linear-gradient(
+    to bottom right,
+    #f3544e 0%,
+    #f3544e 50%,
+    #353336 50%,
+    #39343d 100%
+  );*/
+  /*background: url("https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
+    center center no-repeat;*/
 }
 .title {
-  font-size: 25px;
+  color: hsl(0, 100%, 41%);
   font-family: "Raleway", sans-serif;
-  /* color: rgb(233, 27, 27);*/
-  color: rgb(238, 101, 38);
-  padding-bottom: 10px;
+}
+span {
+  padding-right: 12px;
+  font-weight: 300;
+  color: #111;
+}
+.div {
+  color: #370617;
+  font-weight: 600;
+}
+
+.remove {
+  color: #fff;
+  background-color: #d00000;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
 .switch {
-  /* width: 60px;
-  height: 34px;*/
-  width: 60px;
-  height: 24px;
   position: relative;
-  /* left: 40px;
-  bottom: 40px;*/
-  /*  width: 60px;
-  height: 34px;*/
+  width: 70px;
+  height: 24px;
 }
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -242,29 +114,22 @@ span {
   left: 0;
   right: 0;
   bottom: 0;
+  /* background-color: #e47328;*/
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .slider::before {
   position: absolute;
   content: "";
-  /* height: 26px;
-  width: 26px;*/
-  height: 15px;
-  width: 15px;
   left: 4px;
-  bottom: 4px;
+  top: 4px;
+  width: 15px;
+  height: 15px; /* height: 26px;width: 26px;*/
   background-color: #fff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 50%;
-}
-.fa-trash {
-  position: relative;
-  left: 35vh;
-  bottom: 25px;
 }
 input:checked + .slider {
   background-color: #f32160;
@@ -273,264 +138,375 @@ input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
 input:checked + .slider:before {
-  -webkit-transform: translateX(35px);
-  transform: translateX(35px);
+  -webkit-transform: translateX(45px);
+  transform: translateX(45px);
 }
-
 .slider.round {
   border-radius: 34px;
 }
 /*
-.slide.round::before {
-  border-radius: 50%;
+.section2 {
+  padding: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}*/
+h2 {
+  font-family: "Roboto", "sans-serif";
+  color: #d00000;
+  text-align: center;
+  margin-bottom: 2em;
 }
-*/
 form {
-  width: 40%;
-  height: 100%;
-  background-color: wheat;
+  background-color: rgb(7, 7, 7);
   position: absolute;
-  top: 20vw;
-  left: 30vw;
   display: none;
-  padding: 20px;
-  opacity: 0.9;
+  /*opacity: 0.9;*/
   background-attachment: scroll;
 }
 input {
-  padding: 15px;
-  width: 25vw;
-  border-radius: 5px;
-  color: #111;
   display: block;
-  margin: 15px auto;
-  border: none;
+  outline: 0;
+  border-width: 0 0 1px;
+  background-color: rgb(7, 7, 7);
+  color: rgb(231, 13, 13);
+  border-color: #ccc;
 }
-label {
-  font-size: 20px;
-  color: #111;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+::placeholder {
+  color: #ffff;
+  opacity: 1; /* Firefox */
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ffff;
 }
 .submit {
-  background-color: rgb(230, 33, 33);
+  border: none;
   color: #fff;
-  margin: 30px auto;
+  margin: 0 auto;
+  display: block;
+  background-color: rgb(219, 7, 7);
 }
-.fa-trash {
-  color: red;
-}
-.remove {
-  width: 10vw;
-  height: 7vh;
-  font-size: 15px;
-  margin: 10px auto;
-  background-color: rgb(238, 101, 38);
-  color: #fff;
-  letter-spacing: 2px;
-}
-/*}
-/*}
-/*
-@media only screen and (orientation: landscape) {
-  body {
-    background-color: /*#370617*/ /* red;
-  }
-}
-
-@media only screen and (orientation: portrait) {}
-  /*440px and below*/
-
-/*for extra small devices*/
-
 @media (max-width: 575.98px) {
-  html,
-  body {
-    margin: 0;
-    height: 100%;
-    overflow: scroll;
+  header {
+    padding: 1.3em;
   }
-  .container {
-    padding: 0;
-    margin: 0;
+  .fa-book-open {
+    font-size: 2rem;
+    margin-top: 0.25em;
+    margin-right: 0.3em;
   }
   h1 {
-    font-size: 2.5rem;
-    margin-left: 5%;
-    margin-top: 7%;
+    font-size: 2rem;
   }
-  .fa-plus {
+  .brandLine {
+    font-size: 1.5rem; /*or set 25px*/
+    margin: 5em 0.5em 0.7em 0.5em;
+    text-align: center;
+  }
+  .btn-add {
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.5rem;
+    border: 2px solid blanchedalmond;
     margin: 0 auto;
-    font-size: 0.7em;
+    width: 170px; /*35vw;*/
+    height: 50px; /*5vh;*/
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+  .yourBooks {
+    padding: 1vh;
+  }
+  .yourBooks h2 {
+    font-size: 2.5rem;
+    padding: 4vh;
+    /* border:1px solid red;
+    outline:none;
+    border-left: none;
+    border-right: none;
+    border-top: none;*/
   }
   .bookContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-
-  .card {
-    font-size: 16px;
-    height: 70%;
-    font-weight: 400;
-    width: 100vw; /*vmin is minimum of width and height*/
-    padding: 10px;
-    text-align: center;
-    margin: 20px;
+  .card,
+  .demoCard {
+    margin-bottom: 2em;
+    width: 100%; /*width: 80vw;*/
+    height: 60vh; /*height:80vh*/
+    padding: /*1.2em;*/ 1em;
   }
   .title {
-    font-size: 20px;
-    font-family: "Raleway", sans-serif;
-    /* color: rgb(233, 27, 27);*/
-    color: rgb(238, 101, 38);
-    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+  div {
+    font-size: 1.8rem;
   }
 
-  span {
-    padding-right: 5px;
-  }
-  .div {
-    margin: 6px;
-  }
   .remove {
-    width: 80vw;
-    height: 7vh;
-    font-size: 15px;
-    background-color: rgb(238, 101, 38);
-    color: #fff;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
+    width: 100%;
+    height: 8vh;
+    font-size: 1.2rem;
   }
-
+  .formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   form {
-    width: 80%;
-    height: 90%;
-    object-fit: contain;
-    background-color: wheat;
-    position: absolute;
-    top: 50vw;
-    left: 10vw;
-    display: none;
-    padding: 10px;
+    width: 10em; /*14em*/
+    height: 50%; /*60%;*/
+    top: 370px;
+    left: 20px;
+    right: 20px;
+    padding: 5px;
     opacity: 0.9;
-    background-attachment: scroll;
+    /*opacity: 0.9;/*
+    display: flex; justify-content: center;  align-items: center;*/
   }
   input {
-    padding: 5px;
-    width: 55vw;
-    border-radius: 5px;
-    color: #111;
-    display: block;
-    margin: 10px auto;
-    border: none;
-  }
-  label {
-    font-size: 18px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .submit {
-    background-color: rgb(230, 33, 33);
-    color: #fff;
-    margin: 20px auto;
     width: 50%;
     height: 10%;
-    font-size: 13px;
+    font-size: 15px;
+    border-radius: 20px;
   }
 }
 
-/*@media only screen and (min-width: 577px) {
+input:checked + .slider:before {
+  -webkit-transform: translateX(45px);
+  transform: translateX(45px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+@media only screen and (min-width: 576px) {
+  header {
+    padding: 2em;
+  }
+  .fa-book-open {
+    font-size: 2.5rem;
+    margin-right: 0.3em;
+    margin-top: 0.3em;
+  }
   h1 {
-    margin-left: 0.5em;
+    font-size: 2.6rem;
+    font-weight: 600;
   }
-  .card {
-    min-height: 85%;
-    background-color: rgb(245, 245, 244);
-    border: none;
-    font-family: "Roboto", sans-serif;
-    color: #370617;
-    font-weight: 500;
-    padding: 1.2em;
-    width: 70vmin;
-    margin: auto;
-    margin: 15px auto;
-  }
-  .title {
-    margin-bottom: 20px;
-  }
-  .content {
+  .brandLine {
+    font-size: 2rem;
+    margin: 5em 0.5em 0.7em 0.5em;
     text-align: center;
   }
+  .btn-add {
+    height: 60px;
+    width: 190px;
+    padding: 1em;
+    color: mintcream;
+  }
+  .yourBooks {
+    padding: 5vh;
+  }
+  .yourBooks h2 {
+    font-size: 3rem;
+    padding: 6vh;
+  }
+  .card,
+  .demoCard {
+    margin-bottom: 2.2em;
+    width: 100%; /*width:100%*/
+    height: 70vh; /*80vh*/
+    padding: 0.5em;
+  }
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  .div {
+    font-size: 2rem;
+    margin-bottom: 6px;
+  }
   .switch {
-    margin-top: 1.5em;
+    width: 90px;
+    height: 25px;
+  }
+  .slider::before {
+    left: 5px;
+    top: 5px;
+    width: 18px;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(60px);
+    transform: translateX(60px);
   }
   .remove {
-    width: 10em;
-    height: 3em;
-    padding: 15px;
+    width: 15em;
+    height: 10vh;
+    font-size: 25px;
+    letter-spacing: 2px;
+    border-radius: 5px;
   }
-
   form {
-    width: 60%;
-    position: absolute;
-    top: 60vw;
-    left: 20vw;
-    padding: 5px;
-    height: 100vh;
+    width: 22em;
+    height: 60%;
+    top: 70vw;
+    left: 25vw;
   }
   input {
-    padding: 8px;
-    width: 30vw;
-    margin: 10px auto;
+    margin: 35px;
+    width: 18em;
+    font-size: 1rem;
   }
   .submit {
-    margin: 30px auto;
-    padding: 10px;
-    width: 7em;
-    height: 2.5em;
-    letter-spacing: 3px;
-  }
-  .fa-plus {
-    margin-top: 10vw;
+    width: 55%;
+    height: 12%;
+    font-size: 16px;
+    border-radius: 10px;
   }
 }
-
 /* Medium devices (landscape tablets, 768px and up) */
 
-/*@media only screen and (min-width: 768px) {
-  .fa-plus {
-    margin-bottom: 5vw;
-    margin-top: 4vw;
-  }
+@media only screen and (min-width: 768px) {
   h1 {
-    margin-left: 1.1em;
+    font-size: 3.5rem;
+    font-weight: 900;
   }
-  .container {
-    padding: 5px;
+  .fa-book-open {
+    font-size: 3.5rem;
+    margin-right: 0.4em;
+  }
+
+  .yourBooks {
+    padding: 1em;
+  }
+  h2 {
+    margin-bottom: 1em;
   }
   .bookContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
+  }
+  .card,
+  .demoCard {
+    width: 70%;
+    height: 100%;
+    margin-bottom: 3.5em;
+    padding: 3.5em;
+  }
+  .div {
+    font-size: 2.1rem;
+  }
+  .remove {
+    width: 15em; /*width:15em*/
+    font-size: 1.3rem;
+  }
+}
+.switch {
+  margin-bottom: 1em;
+}
+.cardContent {
+  margin-bottom: 1.5em;
+}
+/*
+.card,
+.demoCard {
+  padding: 1.5em;
+  font-size: 1.4rem;
+  margin-bottom: 3.5em;
+}
+title {
+  font-weight: 800;
+}
+span {
+  font-weight: 300;
+}*/
+/*.yourBooks {
+  /*padding: 10vh;
+}*/
+
+@media only screen and (min-width: 992px) {
+  .fa-book-open {
+    /*  font-size: 3.5rem;*/
+    font-size: 4rem;
+    margin-top: 0.3em;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+  .yourBooks h2 {
+    font-size: 3.5rem;
+  }
+  .bookContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
   }
-  .card {
-    height: 80%;
-    width: 70vmin;
-    margin: 5px;
-    margin-bottom: 35px;
+  .card,
+  .demoCard {
+    width: 45%;
+    height: 80vh;
+    margin: 1em;
   }
-  form {
-    position: absolute;
-    top: 15vw;
-    left: 20vw;
-    display: none;
-    padding: 10px;
-    opacity: 0.9;
-    background-attachment: scroll;
-    margin: 0 auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .btn-add {
+    width: 250px; /*35vw;*/
   }
-  .submit {
-    height: 2.1em;
+  .card,
+  .demoCard {
+    width: 50vmin;
+    height: 70vh;
+  }
+  .div {
+    font-size: 1.5rem;
+  }
+  .remove {
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.6rem;
   }
 
+  form {
+    width: 20rem;
+    height: 70%;
+    top: 60vw;
+    left: 25vw;
+    padding: 15px;
+    /*opacity: 0.9;*/
+  }
+  input {
+    margin: 40px;
+    width: 15em;
+    font-size: 15px;
+  }
+  .submit {
+    width: 55%;
+    height: 12%;
+    border-radius: 20px;
+    font-size: 15px;
+  }
+}
