@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
@@ -17,50 +16,26 @@
       <h1>Library</h1>
     </header>
     <h2 class="brandLine">Keep track of the books you read.</h2>
-    <div class="btn-add">Add book</div>
+    <div class="btn-add">Add Book</div>
   </section>
 
-  <!--  <div class="bookAdd">   
-          <i class="fas fa-plus-circle"></i></div> 
-          -->
-  <!-- <div class="add"><button class="addook">ADD BOOK</button></div>-->
-
-
-  <section class="yourBooks">
+  <section class="yourBooks"id="books">
     <h2>Your Books</h2>
     <section class="bookContainer">
-      <!--<section class="demoCard"> 
-        <div class="content">
-          <div class="title div" style="color:#d00000">The Kite Runner</div>
-          <div class="cardContent">
-            <div class="author div"><span class="span">Author:</span>Khaled Hosseni</div>
-            <div class="pageNo div"><span class="span">No of Pages:</span>300</div>
-            <div class="status div"><span class="span">Status:</span>Read</div>
-          </div>
-          <div class="cardContent2">
-            <label class="switch">
-              <input type="checkbox" class="scrollBar">
-              <span class="slider round"></span>
-            </label>
-          </div>-->
-          <!-- <button class="remove"><i class="fas fa-trash"></i></button>-->
-          <!--
-          <button class="remove removeBook">Remove</button>
-        </div>
-      </section>-->
-      <!--<div class="state">Read/Unread:Read</div>-->
     </section>
   </section>
+
   <div class="formContainer">
-    <form>
+    <form href="#books">
+      <div class="close">+</div>
       <input type="text" placeholder="Name of the Book" required>
       <input type="text" class="writer" placeholder="Author" required>
-      <input type="text" class="page" placeholder="No of pages">
-      <input type="text" class="readStatus" placeholder="Read: true/false">
+      <input type="number" class="page" placeholder="No of pages" required>
+      <input type="text" class="readStatus" placeholder="Read: true/false" required>
       <button class="submit">SUBMIT</button>
     </form>
   </div>
+
   <script src="main.js"></script>
 </body>
-
 </html>
