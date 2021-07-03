@@ -36,8 +36,18 @@ closeForm.addEventListener("click",function(){
 }
 closeForm();
 
+function validator() {
+    title = document.querySelector('input[type="text"]').value;
+    author = document.querySelector('.writer').value;
+    pages = document.querySelector('.page').value;
+    readStatus = document.querySelector('.readStatus').value;
+    return title !== '' && author !== '' && pages !== '' && readStatus !== '';
+}
 //function to add the book object to the array
 function addBook(e) {
+    if (!validator()) {
+        return;
+    }
     let title, author, pages, readStatus, id, form;
 
     //get the inputs from the form
@@ -120,7 +130,6 @@ function displayBook(book) {
     book_title.textContent = book.title;
     book_title.classList.add('title');
     cardContent.appendChild(book_title)
-   // bookCard.appendChild(book_title);
    
 
     //for creating div author
@@ -128,7 +137,6 @@ function displayBook(book) {
     author_.innerHTML = '<span>Author:</span>' + book.author;
     author_.classList.add('div');
     cardContent.appendChild(author_)
-    //bookCard.appendChild(div_author);
 
     //for creating div page no
     const no_of_pages = document.createElement('div');
@@ -136,7 +144,6 @@ function displayBook(book) {
         //  console.log(pages);
     no_of_pages.classList.add('div');
     cardContent.appendChild(no_of_pages)
-    //bookCard.appendChild(no_of_pages);
 
 
     //for creating read status
@@ -144,15 +151,14 @@ function displayBook(book) {
     status.innerHTML = '<span>Status:</span>' + book.status;
     //console.log(status);
     status.classList.add('div');
-    /*status.style.marginBottom = "1em";*/
+    status.style.marginBottom = "1em";
     cardContent.appendChild(status)
-   // bookCard.appendChild(status);
 
     //creating label and appending it to the card
     const toggleLabel = document.createElement('label');
     toggleLabel.classList.add('switch');
     cardContent.appendChild(toggleLabel)
-   /* bookCard.appendChild(toggleLabel);*/
+    toggleLabel.style.margin = "0 auto"
 
 
     //creating input
@@ -167,20 +173,18 @@ function displayBook(book) {
 
     //creating span,adding classes and appending it to the label
     const toggleSpan = document.createElement('span');
-    toggleSpan.classList.add('slider', 'slider::before', 'round');
+    toggleSpan.classList.add('slider', /*'slider::before',*/ 'round');
     toggleLabel.appendChild(toggleSpan);
 
 
     //set toggleInput value as per staus of book
-    if (book.status === true) {
+    if (book.status === 'true') {
         toggleInput.checked = true;
         status.innerHTML = '<span>Status:</span>' + 'Read';
-        //bookCard.style.backgroundColor = "wheat"
 
     } else {
         toggleInput.checked = false;
         status.innerHTML = '<span>Status:</span>' + 'Not Read';
-       // bookCard.style.backgroundColor = "rgb(245, 245, 244)";
     }
 
     //add toggle ability to each book 'read' button on click
@@ -188,10 +192,8 @@ function displayBook(book) {
         book.status = !book.status;
         if (book.status === true) {
             status.innerHTML = '<span>Status:</span>' + 'Read';
-          //  bookCard.style.backgroundColor = "wheat"
         } else {
             status.innerHTML = '<span>Status:</span>' + 'Not Read';
-          //  bookCard.style.backgroundColor = "rgb(245, 245, 244)";
         }
         localStorage.setItem('Books', JSON.stringify(myLibrary));
     });
