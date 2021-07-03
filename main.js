@@ -1,3 +1,4 @@
+
 //Event listener of button add
 const add = document.querySelector(".btn-add");
 add.addEventListener("click", getForm);
@@ -6,12 +7,14 @@ add.addEventListener("click", getForm);
 let myLibrary = [];
 
 //book constructor
-function Book(title, author, pages, status, id) {
+class Book{
+    constructor(title, author, pages, status, id){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.status = status;
     this.id = id;
+}
 }
 
 //function to get the form for submitting book inputs
@@ -24,7 +27,14 @@ function getForm() {
     //add event listener to submit
     btnSubmit.addEventListener("click", addBook);
 }
-
+function closeForm(){
+const form = document.querySelector('form');
+const closeForm = document.querySelector('.close');
+closeForm.addEventListener("click",function(){
+    form.style.display = "none";
+})
+}
+closeForm();
 
 //function to add the book object to the array
 function addBook(e) {
@@ -32,7 +42,6 @@ function addBook(e) {
 
     //get the inputs from the form
     title = document.querySelector('input[type="text"]').value;
-    // console.log(title);
     author = document.querySelector('.writer').value;
     pages = document.querySelector('.page').value;
     readStatus = document.querySelector('.readStatus').value;
@@ -42,10 +51,22 @@ function addBook(e) {
     //make the instance of the object constructor and push to the array
     const myBook = new Book(title, author, pages, readStatus, id);
     myLibrary.push(myBook);
+     
+    //clear input fields
+    title = document.querySelector('input[type="text"]');
+    author = document.querySelector('.writer');
+    pages = document.querySelector('.page');
+    readStatus = document.querySelector('.readStatus');
+    
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    readStatus.value = "";
 
     //remove the form from display
     e.preventDefault();
     form.style.display = "none";
+   
 
     //call the store function to store book
     store();
@@ -54,8 +75,8 @@ function addBook(e) {
 //store book in local storage and grab books from local storage
 function store() {
     localStorage.setItem("Books", JSON.stringify(myLibrary));
-    //clear the items from display and grab them from ls
-    document.querySelector('.bookContainer').innerHTML = '' //without this, everytime one book is added ,checkBookArr() will continue to display all books despite having them in display.
+    //clear the existing items from display and grab them from ls
+    document.querySelector('.bookContainer').innerHTML = '';
     checkBookArr();
 }
 
@@ -89,27 +110,33 @@ function displayBook(book) {
     const bookCard = document.createElement('section');
     bookCard.classList.add('card');
     bookCard.id = book.id;
+
+    //create parent div for card content
+    const cardContent = document.createElement("div");
+    cardContent.classList.add("cardContent");
+
     //for creating div title
     const book_title = document.createElement('div');
     book_title.textContent = book.title;
     book_title.classList.add('title');
-    bookCard.appendChild(book_title);
-
+    cardContent.appendChild(book_title)
+   // bookCard.appendChild(book_title);
+   
 
     //for creating div author
-    const div_author = document.createElement('div');
-    div_author.innerHTML = '<span>Author:</span>' + book.author;
-    div_author.classList.add('div');
-    bookCard.appendChild(div_author);
-
-    container.appendChild(bookCard)
+    const author_ = document.createElement('div');
+    author_.innerHTML = '<span>Author:</span>' + book.author;
+    author_.classList.add('div');
+    cardContent.appendChild(author_)
+    //bookCard.appendChild(div_author);
 
     //for creating div page no
     const no_of_pages = document.createElement('div');
     no_of_pages.innerHTML = '<span>No of Page:</span>' + book.pages
         //  console.log(pages);
     no_of_pages.classList.add('div');
-    bookCard.appendChild(no_of_pages);
+    cardContent.appendChild(no_of_pages)
+    //bookCard.appendChild(no_of_pages);
 
 
     //for creating read status
@@ -117,13 +144,16 @@ function displayBook(book) {
     status.innerHTML = '<span>Status:</span>' + book.status;
     //console.log(status);
     status.classList.add('div');
-    status.style.marginBottom = "1.5em";
-    bookCard.appendChild(status);
+    /*status.style.marginBottom = "1em";*/
+    cardContent.appendChild(status)
+   // bookCard.appendChild(status);
 
     //creating label and appending it to the card
     const toggleLabel = document.createElement('label');
     toggleLabel.classList.add('switch');
-    bookCard.appendChild(toggleLabel);
+    cardContent.appendChild(toggleLabel)
+   /* bookCard.appendChild(toggleLabel);*/
+
 
     //creating input
     let toggleInput = document.createElement('input');
@@ -140,16 +170,17 @@ function displayBook(book) {
     toggleSpan.classList.add('slider', 'slider::before', 'round');
     toggleLabel.appendChild(toggleSpan);
 
+
     //set toggleInput value as per staus of book
     if (book.status === true) {
         toggleInput.checked = true;
         status.innerHTML = '<span>Status:</span>' + 'Read';
-        bookCard.style.backgroundColor = "wheat"
+        //bookCard.style.backgroundColor = "wheat"
 
     } else {
         toggleInput.checked = false;
         status.innerHTML = '<span>Status:</span>' + 'Not Read';
-        bookCard.style.backgroundColor = "rgb(245, 245, 244)";
+       // bookCard.style.backgroundColor = "rgb(245, 245, 244)";
     }
 
     //add toggle ability to each book 'read' button on click
@@ -157,10 +188,10 @@ function displayBook(book) {
         book.status = !book.status;
         if (book.status === true) {
             status.innerHTML = '<span>Status:</span>' + 'Read';
-            bookCard.style.backgroundColor = "wheat"
+          //  bookCard.style.backgroundColor = "wheat"
         } else {
             status.innerHTML = '<span>Status:</span>' + 'Not Read';
-            bookCard.style.backgroundColor = "rgb(245, 245, 244)";
+          //  bookCard.style.backgroundColor = "rgb(245, 245, 244)";
         }
         localStorage.setItem('Books', JSON.stringify(myLibrary));
     });
@@ -169,7 +200,11 @@ function displayBook(book) {
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('remove');
     removeBtn.textContent = 'Remove';
-    bookCard.appendChild(removeBtn);
+    cardContent.appendChild(removeBtn);
+
+    bookCard.appendChild(cardContent);
+
+    container.appendChild(bookCard)
 }
 
 //get id of book object and set id to book card
@@ -204,46 +239,10 @@ function removeItem() {
             const remove_fromArr = myLibrary.splice(indexOf_item, 1);
             //console.log(remove_fromArr);
             localStorage.setItem("Books", JSON.stringify(myLibrary));
-            e.target.parentNode.remove();
+            e.target.parentNode.parentNode.remove();
 
         })
     })
 };
 setId();
 
-
-
-// function remove() {
-//     //make existing remove btn work
-//     const removeDom = document.querySelector('.remove');
-//     removeDom.addEventListener("click", function() {
-//         //console.log('deleted');
-//         removeDom.parentNode.parentNode.remove();
-//     })
-// }
-
-/*
- //function for existing item's togglebar management
-function toggle(){
-const scrollBar = document.querySelector('.scrollBar');
-scrollBar.addEventListener("click",function(){
-  // console.log('hey');
-   if(scrollBar.checked==true){
-      const status = document.querySelector('.status');
-      status.innerHTML = '<span>Status:</span>'  +  'Read';
-      const card = document.querySelector('.card');
-      card.style.backgroundColor = "wheat";
-
-
-   } else if(scrollBar.checked==false){
-      const status = document.querySelector('.status');
-      status.innerHTML = '<span>Status:</span>'  +  'Unread';
-      const card = document.querySelector('.card');
-      card.style.backgroundColor = "rgb(245, 245, 244)";
-
-
-   }
-})
-}
-
-toggle();*/
