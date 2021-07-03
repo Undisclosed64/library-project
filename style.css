@@ -122,11 +122,11 @@ span {
   font-weight: 600;
   font-size: 1.2rem;
 }
+/*
 .switch {
   position: relative;
   width: 70px;
   height: 24px;
-  /* top: 10em;*/
 }
 .switch input {
   opacity: 0;
@@ -141,6 +141,7 @@ span {
   right: 0;
   bottom: 0;
   /* background-color: #e47328;*/
+/*
   background-color: #fff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -155,6 +156,7 @@ span {
   top: 4px;
   width: 15px;
   height: 15px; /* height: 26px;width: 26px;*/
+/*
   background-color: #fff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -166,12 +168,74 @@ input:checked + .slider {
 input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
-input:checked + .slider:before {
+input:checked + .slider::before {
   -webkit-transform: translateX(45px);
   transform: translateX(45px);
 }
 .slider.round {
   border-radius: 34px;
+}
+*/
+.switch {
+  position: relative;
+  display: inline-block;
+  /*width: 70px;
+  height: 24px;*/
+  width: 70px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  left: 4px;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #f32160;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(47px);
+  transform: translateX(47px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 .remove {
   font-size: 1.1rem;
@@ -182,6 +246,7 @@ input:checked + .slider:before {
   background-color: oldlace;
   margin: 0 auto;
   display: block;
+  margin-top: 1em;
 }
 .remove:hover {
   background-color: rgb(250, 213, 158);
@@ -193,8 +258,9 @@ form {
   display: none;
   background-attachment: scroll;
   padding: 0.5em;
-  top: 20em;
-  left: 2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .close {
   font-size: 32px;
