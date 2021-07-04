@@ -178,7 +178,7 @@ function displayBook(book) {
 
 
     //set toggleInput value as per staus of book
-    if (book.status === 'true') {
+    if (book.status === 'true' || book.status === 'True') {
         toggleInput.checked = true;
         status.innerHTML = '<span>Status:</span>' + 'Read';
 
