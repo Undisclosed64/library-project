@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 .home {
   background-image: url("https://images.pexels.com/photos/4256852/pexels-photo-4256852.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-size: cover;
@@ -27,6 +30,33 @@ header {
   padding-top: 0.4em;
   font-size: 2.1rem;
   padding-right: 0.3em;
+}
+.successPopup {
+  font-size: 18px;
+  border: 1px solid green;
+  text-align: center;
+  position: absolute;
+  background-attachment: scroll;
+  padding: 0.8em;
+  top: 20px;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-family: "Roboto", "sans-serif";
+  background-color: #0081a7;
+  color: #fff;
+  display: none;
+  animation: fadeInAnimation linear 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .brandLine,
 .btn-add {
@@ -278,13 +308,10 @@ input:hover {
     padding-top: 0.44em;
     font-size: 2.5rem;
   }
-  .brandLine,
-  .btn-add {
-    font-size: 1.6rem;
-  }
+  /*
   .brandLine {
     margin-top: 5em;
-  }
+  }*/
   .card {
     width: 60%;
   }
@@ -316,13 +343,12 @@ input:hover {
     width: 40%;
   }
   .yourBooks h2 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     font-weight: 900;
   }
 }
 @media only screen and (min-width: 992px) {
   .yourBooks h2 {
-    font-size: 3.2rem;
     font-weight: 900;
   }
   .bookContainer {
