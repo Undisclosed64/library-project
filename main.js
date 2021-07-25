@@ -1,8 +1,4 @@
 
-//Event listener of button add
-const add = document.querySelector(".btn-add");
-add.addEventListener("click", getForm);
-
 //Array to store all the book objects
 let myLibrary = [];
 
@@ -16,6 +12,9 @@ class Book{
     this.id = id;
 }
 }
+//Event listener of button add
+const add = document.querySelector(".btn-add");
+add.addEventListener("click", getForm);
 
 //function to get the form for submitting book inputs
 function getForm() {
@@ -45,9 +44,9 @@ function validator() {
 }
 //function to add the book object to the array
 function addBook(e) {
-    if (!validator()) {
+   if (!validator()) {
         return;
-    }
+   }
     let title, author, pages, readStatus, id, form;
 
     //get the inputs from the form
@@ -55,6 +54,8 @@ function addBook(e) {
     author = document.querySelector('.writer').value;
     pages = document.querySelector('.page').value;
     readStatus = document.querySelector('.readStatus').value;
+    //readStatus = parseInt(readStatus);
+   // console.log(readStatus);
     id = Math.random().toString(16).slice(2) + (new Date()).getTime() + Math.random().toString(16).slice(2);
     form = document.querySelector('form');
 
@@ -76,7 +77,11 @@ function addBook(e) {
     //remove the form from display
     e.preventDefault();
     form.style.display = "none";
-   
+
+    //show the success msg after adding book
+    const successMsg = document.querySelector('.successPopup');
+    successMsg.style.display = "block";
+    window.setTimeout("document.querySelector('.successPopup').style.display='none';", 4000);
 
     //call the store function to store book
     store();
@@ -131,7 +136,6 @@ function displayBook(book) {
     book_title.classList.add('title');
     cardContent.appendChild(book_title)
    
-
     //for creating div author
     const author_ = document.createElement('div');
     author_.innerHTML = '<span>Author:</span>' + book.author;
@@ -144,7 +148,6 @@ function displayBook(book) {
         //  console.log(pages);
     no_of_pages.classList.add('div');
     cardContent.appendChild(no_of_pages)
-
 
     //for creating read status
     const status = document.createElement('div');
@@ -159,7 +162,6 @@ function displayBook(book) {
     toggleLabel.classList.add('switch');
     cardContent.appendChild(toggleLabel)
     toggleLabel.style.margin = "0 auto"
-
 
     //creating input
     let toggleInput = document.createElement('input');
@@ -178,10 +180,9 @@ function displayBook(book) {
 
 
     //set toggleInput value as per staus of book
-    if (book.status === 'true' || book.status === 'True') {
+    if (book.status === true || book.status === 'yes') {
         toggleInput.checked = true;
         status.innerHTML = '<span>Status:</span>' + 'Read';
-
     } else {
         toggleInput.checked = false;
         status.innerHTML = '<span>Status:</span>' + 'Not Read';
@@ -189,14 +190,17 @@ function displayBook(book) {
 
     //add toggle ability to each book 'read' button on click
     toggleInput.addEventListener('click', () => {
-        book.status = !book.status;
-        if (book.status === true) {
+      book.status = !book.status;
+     if (book.status === true) {
             status.innerHTML = '<span>Status:</span>' + 'Read';
+            toggleInput.checked = true;  
         } else {
             status.innerHTML = '<span>Status:</span>' + 'Not Read';
+           toggleInput.checked = false;
         }
         localStorage.setItem('Books', JSON.stringify(myLibrary));
     });
+   
 
     //create delete button with each new book
     const removeBtn = document.createElement('button');
@@ -208,17 +212,16 @@ function displayBook(book) {
 
     container.appendChild(bookCard)
 }
-
 //get id of book object and set id to book card
 function setId() {
     let ids = myLibrary.map(function(book) {
         return book.id;
-    });
+   });
     const bookCards = document.querySelectorAll('.card');
     const bookCards_arr = Array.prototype.slice.call(bookCards);
-    for (let i = 0; i < ids.length; i++) {
+   for (let i = 0; i < ids.length; i++) {
         //console.log([i]);
-    }
+   }
     for (let i = 0; i < bookCards_arr.length; i++) {
         bookCards_arr[i].id = ids[i];
         // console.log(bookCards_arr[i]);
