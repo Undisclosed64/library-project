@@ -36,11 +36,13 @@ closeForm.addEventListener("click",function(){
 closeForm();
 
 function validator() {
+    let title, author, pages;
+
     title = document.querySelector('input[type="text"]').value;
     author = document.querySelector('.writer').value;
     pages = document.querySelector('.page').value;
-    readStatus = document.querySelector('.readStatus').value;
-    return title !== '' && author !== '' && pages !== '' && readStatus !== '';
+
+    return title !== '' && author !== '' && pages !== '';
 }
 //function to add the book object to the array
 function addBook(e) {
@@ -54,7 +56,6 @@ function addBook(e) {
     author = document.querySelector('.writer').value;
     pages = document.querySelector('.page').value;
     readStatus = document.querySelector('.readStatus').value;
-    //readStatus = parseInt(readStatus);
    // console.log(readStatus);
     id = Math.random().toString(16).slice(2) + (new Date()).getTime() + Math.random().toString(16).slice(2);
     form = document.querySelector('form');
@@ -145,7 +146,7 @@ function displayBook(book) {
     //for creating div page no
     const no_of_pages = document.createElement('div');
     no_of_pages.innerHTML = '<span>No of Page:</span>' + book.pages
-        //  console.log(pages);
+    //console.log(pages);
     no_of_pages.classList.add('div');
     cardContent.appendChild(no_of_pages)
 
@@ -177,7 +178,6 @@ function displayBook(book) {
     const toggleSpan = document.createElement('span');
     toggleSpan.classList.add('slider', /*'slider::before',*/ 'round');
     toggleLabel.appendChild(toggleSpan);
-
 
     //set toggleInput value as per staus of book
     if (book.status === true || book.status === 'yes') {
@@ -241,7 +241,7 @@ function removeItem() {
             //console.log(item);
             let indexOf_item = myLibrary.indexOf(item);
             //console.log(indexOf_item);
-            const remove_fromArr = myLibrary.splice(indexOf_item, 1);
+            myLibrary.splice(indexOf_item, 1);
             //console.log(remove_fromArr);
             localStorage.setItem("Books", JSON.stringify(myLibrary));
             e.target.parentNode.parentNode.remove();
